@@ -1070,8 +1070,15 @@
             const { getAuth, signInAnonymously, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js");
             const { getFirestore, collection, doc, setDoc, addDoc, deleteDoc, onSnapshot } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js");
 
-            const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
-            if (!firebaseConfig || !firebaseConfig.apiKey) throw new Error('No Firebase config');
+            const firebaseConfig = {
+                apiKey: "AIzaSyDr7HTFfrH9ysDVAg2WlR6RkMdst0mMdTM",
+                authDomain: "interiors-56740.firebaseapp.com",
+                projectId: "interiors-56740",
+                storageBucket: "interiors-56740.firebasestorage.app",
+                messagingSenderId: "304781491747",
+                appId: "1:304781491747:web:ef1efb994267e102197b96",
+                measurementId: "G-PFNV109SP5"
+            };
 
             const app = initializeApp(firebaseConfig);
             auth = getAuth(app);
