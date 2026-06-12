@@ -707,25 +707,33 @@
                 <!-- Contact Form -->
                 <div class="w-full lg:w-3/5 p-10 lg:p-14 bg-carbon/50">
                     <h3 class="text-2xl font-serif text-white mb-8">Send us a message</h3>
-                    <form id="contact-form" onsubmit="event.preventDefault(); showSuccessMessage();" class="space-y-7">
+                    <form id="contact-form" class="space-y-7">
+                        <!-- Web3Forms Config -->
+                        <input type="hidden" name="access_key" value="aa707221-1371-466b-b653-2ed15fbae729">
+                        <input type="hidden" name="subject" value="New Consultation Request — Shanta Interiors">
+                        <input type="hidden" name="from_name" value="Shanta Interiors Website">
+                        <input type="hidden" name="redirect" value="">
+                        <!-- Honeypot spam protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
                             <div>
                                 <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Name</label>
-                                <input type="text" required class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors placeholder:text-gray-600" placeholder="John Doe">
+                                <input type="text" name="name" required class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors placeholder:text-gray-600" placeholder="John Doe">
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Email</label>
-                                <input type="email" required class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors placeholder:text-gray-600" placeholder="john@example.com">
+                                <input type="email" name="email" required class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors placeholder:text-gray-600" placeholder="john@example.com">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
                             <div>
                                 <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Phone</label>
-                                <input type="tel" class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors placeholder:text-gray-600" placeholder="+91 98765 43210">
+                                <input type="tel" name="phone" class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors placeholder:text-gray-600" placeholder="+91 98765 43210">
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Project Location</label>
-                                <select class="w-full bg-transparent border-b border-white/10 py-3 text-gray-400 focus:outline-none focus:border-brand-400 transition-colors">
+                                <select name="location" class="w-full bg-transparent border-b border-white/10 py-3 text-gray-400 focus:outline-none focus:border-brand-400 transition-colors">
                                     <option class="bg-carbon">Bangalore</option>
                                     <option class="bg-carbon">Chennai</option>
                                     <option class="bg-carbon">Hyderabad</option>
@@ -737,14 +745,17 @@
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Project Details</label>
-                            <textarea rows="4" required class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors resize-none placeholder:text-gray-600" placeholder="Tell us about your space, style preferences, and timeline..."></textarea>
+                            <textarea name="message" rows="4" required class="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-brand-400 transition-colors resize-none placeholder:text-gray-600" placeholder="Tell us about your space, style preferences, and timeline..."></textarea>
                         </div>
-                        <button type="submit" class="group relative bg-brand-500 text-white px-10 py-4 rounded-full overflow-hidden uppercase tracking-[0.2em] text-xs font-semibold w-full md:w-auto hover:shadow-[0_0_40px_rgba(168,135,106,0.3)] transition-shadow duration-500">
+                        <button type="submit" id="contact-submit-btn" class="group relative bg-brand-500 text-white px-10 py-4 rounded-full overflow-hidden uppercase tracking-[0.2em] text-xs font-semibold w-full md:w-auto hover:shadow-[0_0_40px_rgba(168,135,106,0.3)] transition-shadow duration-500">
                             <span class="relative z-10">Request Consultation</span>
                         </button>
 
                         <div id="form-success" class="hidden mt-4 p-5 glass border-brand-500/30 rounded-2xl text-brand-300 text-sm">
                             <i class="fas fa-check-circle mr-2 text-brand-400"></i> Thank you! Your inquiry has been received. Our Bangalore team will reach out shortly.
+                        </div>
+                        <div id="form-error" class="hidden mt-4 p-5 glass border-red-500/30 rounded-2xl text-red-300 text-sm">
+                            <i class="fas fa-exclamation-circle mr-2 text-red-400"></i> Something went wrong. Please try again or email us directly.
                         </div>
                     </form>
                 </div>
@@ -918,13 +929,44 @@
          SCRIPTS
     ═══════════════════════════════════════════ -->
     <script>
-    // ─── Contact Form ───
-    function showSuccessMessage() {
-        const s = document.getElementById('form-success');
-        s.classList.remove('hidden');
-        setTimeout(() => s.classList.add('hidden'), 5000);
-        document.getElementById('contact-form').reset();
-    }
+    // ─── Contact Form (Web3Forms) ───
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const btn = document.getElementById('contact-submit-btn');
+        const successDiv = document.getElementById('form-success');
+        const errorDiv = document.getElementById('form-error');
+
+        // Hide previous messages
+        successDiv.classList.add('hidden');
+        errorDiv.classList.add('hidden');
+
+        // Show loading state
+        btn.disabled = true;
+        btn.querySelector('span').textContent = 'Sending...';
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                successDiv.classList.remove('hidden');
+                form.reset();
+                setTimeout(() => successDiv.classList.add('hidden'), 8000);
+            } else {
+                errorDiv.classList.remove('hidden');
+            }
+        } catch (err) {
+            errorDiv.classList.remove('hidden');
+        } finally {
+            btn.disabled = false;
+            btn.querySelector('span').textContent = 'Request Consultation';
+        }
+    });
 
     // ─── FAQ Accordion ───
     function toggleFaq(btn) {
