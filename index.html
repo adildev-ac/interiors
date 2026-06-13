@@ -862,17 +862,28 @@
             <p class="text-sm text-gray-400 mb-6 text-center leading-relaxed">Register your friend's name below. Ask them to call us. If they book a project, you earn a 1% commission on the total project value!</p>
             
             <form id="referral-form" class="space-y-4">
+                <!-- Web3Forms Config -->
+                <input type="hidden" name="access_key" value="48e4969d-2176-4749-9e2c-8095a97c0bc8">
+                <input type="hidden" name="subject" value="New Referral Registered — Shanta Interiors">
+                <input type="hidden" name="from_name" value="Shanta Interiors Website">
+                <!-- Honeypot spam protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
                 <div>
                     <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-1">Your Name</label>
-                    <input type="text" id="ref-your-name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="e.g. John Doe">
+                    <input type="text" id="ref-your-name" name="Referrer Name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="e.g. John Doe">
                 </div>
                 <div>
                     <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-1">Your Phone Number</label>
-                    <input type="tel" id="ref-your-phone" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="So we can pay you">
+                    <input type="tel" id="ref-your-phone" name="Referrer Phone" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="So we can pay you">
                 </div>
                 <div class="pt-4 border-t border-white/10 mt-2">
                     <label class="block text-xs font-medium text-brand-400 uppercase tracking-widest mb-1">Friend's Name</label>
-                    <input type="text" id="ref-friend-name" required placeholder="Who should we expect a call from?" class="w-full bg-brand-500/10 border border-brand-500/30 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors placeholder:text-brand-400/50">
+                    <input type="text" id="ref-friend-name" name="Friend Name" required placeholder="Who should we expect a call from?" class="w-full bg-brand-500/10 border border-brand-500/30 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors placeholder:text-brand-400/50">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-brand-400 uppercase tracking-widest mb-1">Friend's Phone</label>
+                    <input type="tel" id="ref-friend-phone" name="Friend Phone" required placeholder="Friend's contact number" class="w-full bg-brand-500/10 border border-brand-500/30 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors placeholder:text-brand-400/50">
                 </div>
                 
                 <button type="submit" id="ref-submit-btn" class="w-full bg-brand-500 text-white py-3.5 mt-2 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-brand-600 transition-colors rounded-xl relative overflow-hidden group">
@@ -998,6 +1009,7 @@
 
     document.getElementById('referral-form').addEventListener('submit', async function(e) {
         e.preventDefault();
+        const form = e.target;
         const btn = document.getElementById('ref-submit-btn');
         btn.disabled = true;
         btn.querySelector('span').textContent = 'Registering...';
@@ -1006,24 +1018,45 @@
             referrerName: document.getElementById('ref-your-name').value,
             referrerPhone: document.getElementById('ref-your-phone').value,
             friendName: document.getElementById('ref-friend-name').value,
+            friendPhone: document.getElementById('ref-friend-phone').value,
             createdAt: Date.now()
         };
 
         try {
-            if (useFirebase) {
-                const fb = window._fb;
-                await fb.addDoc(fb.collection(fb.db, 'artifacts', fb.appId, 'public', 'data', 'referrals'), data);
-            } else {
-                let refs = JSON.parse(localStorage.getItem('shanta_referrals') || '[]');
-                refs.push({ id: 'ref_' + Date.now(), ...data });
-                localStorage.setItem('shanta_referrals', JSON.stringify(refs));
-                renderReferrals(refs);
+            // Send email via Web3Forms
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(form)
+            });
+            const result = await response.json();
+            
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || 'Email delivery failed');
             }
+
+            // Save to Firebase (fails silently if permissions block it, so email still succeeds)
+            try {
+                if (useFirebase) {
+                    const fb = window._fb;
+                    await fb.addDoc(fb.collection(fb.db, 'artifacts', fb.appId, 'public', 'data', 'referrals'), data);
+                } else {
+                    let refs = JSON.parse(localStorage.getItem('shanta_referrals') || '[]');
+                    refs.push({ id: 'ref_' + Date.now(), ...data });
+                    localStorage.setItem('shanta_referrals', JSON.stringify(refs));
+                    renderReferrals(refs);
+                }
+            } catch (fbErr) {
+                console.error("Firebase save failed:", fbErr);
+            }
+
             document.getElementById('ref-success').classList.remove('hidden');
+            document.getElementById('ref-error').classList.add('hidden');
             document.getElementById('referral-form').reset();
             setTimeout(closeReferralModal, 3000);
         } catch(err) {
+            console.error("Form error:", err);
             document.getElementById('ref-error').classList.remove('hidden');
+            document.getElementById('ref-success').classList.add('hidden');
         } finally {
             btn.disabled = false;
             btn.querySelector('span').textContent = 'Register Referral';
@@ -1334,7 +1367,8 @@
                 </div>
                 <div class="text-sm">
                     <p class="text-white"><span class="text-gray-500 text-xs uppercase mr-1">Referred By:</span> ${item.referrerName}</p>
-                    <p class="text-gray-400"><i class="fas fa-phone text-xs mr-1 opacity-50"></i> ${item.referrerPhone}</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone text-xs mr-1 opacity-50"></i> ${item.referrerPhone}</p>
+                    <p class="text-white"><span class="text-gray-500 text-xs uppercase mr-1">Friend's Phone:</span> ${item.friendPhone || 'N/A'}</p>
                 </div>
             </div>`;
         });
