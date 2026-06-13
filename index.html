@@ -159,6 +159,7 @@
         .faq-item.open .faq-chevron { transform: rotate(180deg); }
         .faq-chevron { transition: transform 0.3s ease; }
     </style>
+    <link rel="icon" href="INTERIORS.png" type="image/png">
 </head>
 
 <body class="font-sans text-gray-400 bg-dark antialiased">
@@ -169,7 +170,6 @@
     <header id="navbar" class="fixed w-full z-50 py-5 text-white bg-transparent">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3 transition-transform duration-300 hover:scale-105">
-                <img src="INTERIORS.png" alt="Logo" class="h-10 md:h-12 object-contain">
                 <span class="logo-text text-xl md:text-2xl font-serif font-bold tracking-wider">SHANTHA <span class="font-light text-brand-400">INTERIORS</span></span>
             </a>
 
@@ -269,7 +269,7 @@
     <!-- ═══════════════════════════════════════════
          OFFER BANNER
     ═══════════════════════════════════════════ -->
-    <section id="offer-banner" class="py-14 bg-carbon relative overflow-hidden border-y border-white/5">
+    <section id="offer-banner" class="py-10 md:py-14 bg-carbon relative overflow-hidden border-y border-white/5">
         <div class="absolute inset-0 bg-gradient-to-r from-brand-500/5 via-transparent to-brand-500/5"></div>
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -297,9 +297,37 @@
 
 
     <!-- ═══════════════════════════════════════════
+         PORTFOLIO
+    ═══════════════════════════════════════════ -->
+    <section id="portfolio" class="py-16 md:py-28 bg-carbon relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6 reveal">
+                <div>
+                    <p class="text-brand-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">Featured Projects</p>
+                    <div class="section-divider mb-6"></div>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white">Our Portfolio</h2>
+                </div>
+                <a href="portfolio.html" class="group hidden md:flex items-center gap-2 text-brand-400 hover:text-white transition-colors text-sm uppercase tracking-widest">
+                    View All Projects <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="mt-12 text-center md:hidden">
+                <a href="portfolio.html" class="inline-flex items-center gap-2 text-brand-400 text-sm uppercase tracking-widest">View All Projects <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
          ABOUT
     ═══════════════════════════════════════════ -->
-    <section id="about" class="py-28 bg-dark relative overflow-hidden">
+    <section id="about" class="py-16 md:py-28 bg-dark relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
         <div class="container mx-auto px-6 md:px-12 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-16 xl:gap-24">
@@ -352,7 +380,7 @@
     <!-- ═══════════════════════════════════════════
          SERVICES
     ═══════════════════════════════════════════ -->
-    <section id="services" class="py-28 bg-carbon relative overflow-hidden">
+    <section id="services" class="py-16 md:py-28 bg-carbon relative overflow-hidden">
         <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-500/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3"></div>
         <div class="container mx-auto px-6 md:px-12 text-center max-w-6xl relative z-10">
             <p class="text-brand-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4 reveal">What We Do</p>
@@ -413,7 +441,7 @@
     <!-- ═══════════════════════════════════════════
          PROCESS / HOW WE WORK
     ═══════════════════════════════════════════ -->
-    <section id="process" class="py-28 bg-dark relative overflow-hidden">
+    <section id="process" class="py-16 md:py-28 bg-dark relative overflow-hidden">
         <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
         <div class="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
             <div class="text-center mb-20">
@@ -468,38 +496,13 @@
     </section>
 
 
-    <!-- ═══════════════════════════════════════════
-         PORTFOLIO
-    ═══════════════════════════════════════════ -->
-    <section id="portfolio" class="py-28 bg-carbon relative overflow-hidden">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6 reveal">
-                <div>
-                    <p class="text-brand-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4">Featured Projects</p>
-                    <div class="section-divider mb-6"></div>
-                    <h2 class="text-4xl md:text-5xl font-serif text-white">Our Portfolio</h2>
-                </div>
-                <a href="portfolio.html" class="group hidden md:flex items-center gap-2 text-brand-400 hover:text-white transition-colors text-sm uppercase tracking-widest">
-                    View All Projects <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Populated by JS -->
-            </div>
-
-            <div class="mt-12 text-center md:hidden">
-                <a href="portfolio.html" class="inline-flex items-center gap-2 text-brand-400 text-sm uppercase tracking-widest">View All Projects <i class="fas fa-arrow-right text-xs"></i></a>
-            </div>
-        </div>
-    </section>
+    
 
 
     <!-- ═══════════════════════════════════════════
          TESTIMONIALS
     ═══════════════════════════════════════════ -->
-    <section id="testimonials" class="py-28 bg-dark relative overflow-hidden">
+    <section id="testimonials" class="py-16 md:py-28 bg-dark relative overflow-hidden">
         <div class="absolute top-0 left-1/2 w-[600px] h-[400px] bg-brand-500/5 rounded-full blur-[130px] -translate-x-1/2 -translate-y-1/2"></div>
         <div class="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
             <div class="text-center mb-16">
@@ -600,7 +603,7 @@
     <!-- ═══════════════════════════════════════════
          FAQ
     ═══════════════════════════════════════════ -->
-    <section id="faq" class="py-28 bg-carbon relative overflow-hidden">
+    <section id="faq" class="py-16 md:py-28 bg-carbon relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 max-w-3xl relative z-10">
             <div class="text-center mb-16">
                 <p class="text-brand-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4 reveal">FAQ</p>
@@ -657,7 +660,7 @@
     <!-- ═══════════════════════════════════════════
          CONTACT
     ═══════════════════════════════════════════ -->
-    <section id="contact" class="py-28 bg-dark relative overflow-hidden">
+    <section id="contact" class="py-16 md:py-28 bg-dark relative overflow-hidden">
         <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[120px] translate-y-1/2 translate-x-1/3"></div>
         <div class="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
             <div class="glass rounded-3xl overflow-hidden flex flex-col lg:flex-row reveal">
