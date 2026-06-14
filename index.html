@@ -174,6 +174,7 @@
             </a>
 
             <nav class="hidden lg:flex space-x-8 items-center">
+                <a href="products.html" class="nav-link text-xs uppercase tracking-[0.2em] font-medium text-brand-400 hover:text-brand-300 transition-colors duration-300">Shop</a>
                 <a href="#about"    class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">About</a>
                 <a href="#services" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">Services</a>
                 <a href="#process"  class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">Process</a>
@@ -192,6 +193,7 @@
 
         <div id="mobile-menu" class="lg:hidden bg-carbon/95 backdrop-blur-xl w-full absolute top-full left-0 border-t border-white/5">
             <div class="flex flex-col px-6 py-6 space-y-5 text-center">
+                <a href="products.html" class="text-brand-400 font-medium hover:text-brand-300 mobile-link tracking-widest text-sm uppercase">Shop</a>
                 <a href="#about"    class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">About</a>
                 <a href="#services" class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">Services</a>
                 <a href="#process"  class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">Process</a>
@@ -1106,6 +1108,44 @@
 
                     <button id="add-portfolio-btn" class="w-full bg-brand-500 text-white py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-600 transition-colors rounded-xl">
                         <i class="fas fa-plus mr-2"></i> Add to Portfolio
+                    </button>
+                </div>
+            </div>
+
+            
+            <!-- ── Add Product Item ── -->
+            <div class="glass rounded-2xl p-6 mt-6">
+                <h3 class="text-lg font-serif text-white mb-5 flex items-center gap-2"><i class="fas fa-couch text-brand-400 text-sm"></i> Add Product</h3>
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Upload Product Image (Required)</label>
+                        <div id="admin-product-dropzone" class="border-2 border-dashed border-white/20 rounded-xl p-8 text-center cursor-pointer hover:border-brand-400 hover:bg-brand-500/5 transition-colors relative">
+                            <input type="file" id="admin-input-product-files" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                            <i class="fas fa-image text-3xl text-brand-400 mb-3"></i>
+                            <p id="admin-product-dropzone-text" class="text-sm text-gray-400 relative z-0">Drag image here or click to upload</p>
+                        </div>
+                    </div>
+                    <div id="upload-product-status-container" class="hidden text-sm text-brand-300 mt-2 text-center bg-brand-500/10 border border-brand-500/20 p-2 rounded-lg">
+                        Uploading...
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2 mt-4">3D Model URL (Optional)</label>
+                        <input type="url" id="admin-input-product-3d" placeholder="https://domain.com/model.glb" class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors placeholder:text-gray-600">
+                        <p class="text-[10px] text-gray-500 mt-1">If you have a 3D .glb file hosted online, paste the direct link here to enable 3D/AR view.</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2 mt-2">Product Name</label>
+                        <input type="text" id="admin-input-product-title" placeholder="e.g. Velvet Sofa" class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors placeholder:text-gray-600">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase tracking-widest mb-2">Price (₹)</label>
+                        <input type="number" id="admin-input-product-price" placeholder="e.g. 45000" class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors placeholder:text-gray-600">
+                    </div>
+
+                    <button id="add-product-btn" class="w-full bg-brand-500 text-white py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-600 transition-colors rounded-xl">
+                        <i class="fas fa-plus mr-2"></i> Add Product
                     </button>
                 </div>
             </div>
