@@ -1,0 +1,92 @@
+/* ─── Global ─── */
+        ::selection { background: #a8876a; color: #fff; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #a8876a; border-radius: 99px; }
+
+        /* ─── Reveal Animations ─── */
+        .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 120ms; }
+        .reveal-delay-2 { transition-delay: 240ms; }
+        .reveal-delay-3 { transition-delay: 360ms; }
+        .reveal-delay-4 { transition-delay: 480ms; }
+
+        /* ─── Navbar ─── */
+        #navbar { transition: background-color 0.4s, padding 0.4s, box-shadow 0.4s, backdrop-filter 0.4s; }
+        .nav-scrolled { background-color: rgba(255,255,255,0.92) !important; backdrop-filter: blur(18px) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important; padding-top: 0.85rem !important; padding-bottom: 0.85rem !important; }
+        .nav-scrolled .nav-link { color: #334155 !important; }
+        .nav-scrolled .logo-text { color: #0f172a !important; }
+
+        /* ─── Image Hover ─── */
+        .img-hover-zoom { overflow: hidden; }
+        .img-hover-zoom img { transition: transform 0.7s cubic-bezier(.22,1,.36,1); }
+        .img-hover-zoom:hover img { transform: scale(1.07); }
+
+        /* ─── Mobile Menu ─── */
+        #mobile-menu { transition: max-height 0.35s ease, opacity 0.3s ease; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+
+        /* ─── Lightbox ─── */
+        #lightbox { transition: opacity 0.3s ease; }
+        #lightbox img { transition: transform 0.4s ease; }
+
+        /* ─── Counter Animation ─── */
+        .counter-num { font-variant-numeric: tabular-nums; }
+
+        /* ─── Testimonials Carousel ─── */
+        .testimonials-track { transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+
+        /* ─── Process Timeline ─── */
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: linear-gradient(to bottom, #a8876a, transparent);
+        }
+        .process-step:last-child::before { display: none; }
+
+        /* ─── Decorative Divider ─── */
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #a8876a, #c0a484);
+            border-radius: 99px;
+        }
+
+        /* ─── Glassmorphism Card ─── */
+        .glass {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ─── Gradient Text ─── */
+        .gradient-text {
+            background: linear-gradient(135deg, #c0a484, #a8876a, #7d5e4b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ─── Hero Parallax Overlay Pattern ─── */
+        .hero-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* ─── Admin Panel ─── */
+        #admin-dashboard-panel { transition: transform 0.4s cubic-bezier(.22,1,.36,1); }
+
+        /* ─── Filter Buttons ─── */
+        .filter-btn { transition: all 0.3s ease; }
+        .filter-btn.active { background: #a8876a; color: #fff; border-color: #a8876a; }
+
+        /* ─── FAQ Accordion ─── */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-chevron { transition: transform 0.3s ease; }
