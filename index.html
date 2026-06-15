@@ -1244,16 +1244,21 @@
     const COMPONENT_RATES = {
         standard: { essential: 700, premium: 1000, luxury: 1200 },
         kitchen: { essential: 1200, premium: 1500, luxury: 1800 },
-        kitchenLoft: { essential: 800, premium: 1100, luxury: 1500 }
+        kitchenLoft: { essential: 800, premium: 1100, luxury: 1500 },
+        bedroomLoft: { essential: 550, premium: 800, luxury: 1000 }
     };
 
     const DEFAULT_COMPONENTS = [
         { id: 'kitchen', name: 'Kitchen', type: 'kitchen', defaultSqft: 100 },
         { id: 'kitchenLoft', name: 'Kitchen Loft', type: 'kitchenLoft', defaultSqft: 40 },
         { id: 'bed1', name: 'Bedroom 1', type: 'standard', defaultSqft: 100 },
+        { id: 'bed1Loft', name: 'Bedroom 1 Loft', type: 'bedroomLoft', defaultSqft: 40 },
         { id: 'bed2', name: 'Bedroom 2', type: 'standard', defaultSqft: 70 },
+        { id: 'bed2Loft', name: 'Bedroom 2 Loft', type: 'bedroomLoft', defaultSqft: 35 },
         { id: 'bed3', name: 'Bedroom 3', type: 'standard', defaultSqft: 70 },
+        { id: 'bed3Loft', name: 'Bedroom 3 Loft', type: 'bedroomLoft', defaultSqft: 35 },
         { id: 'bed4', name: 'Bedroom 4', type: 'standard', defaultSqft: 70 },
+        { id: 'bed4Loft', name: 'Bedroom 4 Loft', type: 'bedroomLoft', defaultSqft: 35 },
         { id: 'tvUnit', name: 'TV Unit', type: 'standard', defaultSqft: 49 },
         { id: 'poojaUnit', name: 'Pooja Unit', type: 'standard', defaultSqft: 21 },
         { id: 'shoeStand', name: 'Shoe Stand', type: 'standard', defaultSqft: 16 },
@@ -1320,9 +1325,9 @@
         if (bhk === "4+ BHK") bedsCount = 4;
 
         activeComponents = DEFAULT_COMPONENTS.filter(item => {
-            if (item.id === 'bed2' && bedsCount < 2) return false;
-            if (item.id === 'bed3' && bedsCount < 3) return false;
-            if (item.id === 'bed4' && bedsCount < 4) return false;
+            if ((item.id === 'bed2' || item.id === 'bed2Loft') && bedsCount < 2) return false;
+            if ((item.id === 'bed3' || item.id === 'bed3Loft') && bedsCount < 3) return false;
+            if ((item.id === 'bed4' || item.id === 'bed4Loft') && bedsCount < 4) return false;
             return true;
         });
 
