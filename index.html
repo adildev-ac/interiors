@@ -212,7 +212,7 @@
         <!-- Background -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop" alt="Luxury Interior" class="w-full h-full object-cover scale-105" id="hero-bg-img">
-            <div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/40 to-dark"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#faf8f5]/90 via-[#faf8f5]/60 to-[#faf8f5]"></div>
             <div class="absolute inset-0 hero-pattern"></div>
         </div>
 
@@ -224,13 +224,13 @@
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24 md:pt-0">
             <!-- Badges -->
             <div class="flex flex-wrap justify-center gap-3 mb-8 reveal">
-                <span class="glass text-white px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20">
+                <span class="bg-white/60 backdrop-blur-md text-dark px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20">
                     <i class="fas fa-gem mr-1.5 text-brand-400"></i> <span id="hero-price-display">Starts at ₹700/sqft</span>
                 </span>
-                <span class="glass text-white px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20">
+                <span class="bg-white/60 backdrop-blur-md text-dark px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20">
                     <i class="fas fa-bolt mr-1.5 text-brand-400"></i> <span id="hero-guarantee-display">30-Day Delivery Guarantee*</span>
                 </span>
-                <button onclick="openReferralModal()" class="glass text-brand-300 hover:text-white px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20 hover:bg-brand-500/20 transition-colors cursor-pointer relative group overflow-hidden">
+                <button onclick="openReferralModal()" class="bg-white/60 backdrop-blur-md text-brand-700 hover:text-brand-900 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20 hover:bg-brand-500/20 transition-colors cursor-pointer relative group overflow-hidden">
                     <span class="absolute inset-0 bg-brand-500/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
                     <i class="fas fa-handshake mr-1.5 text-brand-400 relative z-10 group-hover:text-white transition-colors"></i> <span class="relative z-10">Refer & Earn 1%</span>
                 </button>
@@ -238,11 +238,11 @@
 
             <p class="text-brand-400 font-sans tracking-[0.35em] uppercase text-xs md:text-sm mb-5 reveal reveal-delay-1">Rooted in Bengaluru · Designing for South India</p>
 
-            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] mb-7 reveal reveal-delay-2">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-dark leading-[1.1] mb-7 reveal reveal-delay-2">
                 Crafting Timeless<br><span class="italic font-light gradient-text">Spaces That Inspire</span>
             </h1>
 
-            <p class="text-gray-300 text-base md:text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-3">
+            <p class="text-gray-800 text-base md:text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-3">
                 Bespoke interior design solutions blending modern aesthetics with the rich architectural heritage of South India.
             </p>
 
@@ -250,7 +250,7 @@
                 <a href="#portfolio" class="group relative bg-brand-500 text-white px-10 py-4 rounded-full overflow-hidden uppercase tracking-[0.2em] text-xs font-semibold w-full sm:w-auto hover:shadow-[0_0_40px_rgba(168,135,106,0.3)] transition-shadow duration-500">
                     <span class="relative z-10">Explore Our Work</span>
                 </a>
-                <a href="#contact" class="border border-white/25 text-white px-10 py-4 rounded-full hover:bg-white hover:text-dark transition-all duration-500 uppercase tracking-[0.2em] text-xs font-semibold w-full sm:w-auto backdrop-blur-sm">
+                <a href="#contact" class="border border-dark/20 text-dark px-10 py-4 rounded-full hover:bg-dark hover:text-white transition-all duration-500 uppercase tracking-[0.2em] text-xs font-semibold w-full sm:w-auto backdrop-blur-sm">
                     Book Consultation
                 </a>
             </div>
@@ -258,9 +258,9 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-            <a href="#offer-banner" class="flex flex-col items-center text-white/40 hover:text-brand-400 transition-colors">
+            <a href="#offer-banner" class="flex flex-col items-center text-dark/40 hover:text-brand-400 transition-colors">
                 <span class="text-[10px] uppercase tracking-[0.3em] mb-2">Scroll</span>
-                <div class="w-5 h-8 border border-white/20 rounded-full flex justify-center pt-1.5">
+                <div class="w-5 h-8 border border-dark/20 rounded-full flex justify-center pt-1.5">
                     <div class="w-1 h-2 bg-brand-400 rounded-full animate-bounce"></div>
                 </div>
             </a>
@@ -862,23 +862,23 @@
     <!-- ═══════════════════════════════════════════
          QUOTE MODAL
     ═══════════════════════════════════════════ -->
-            <div id="quote-modal" class="fixed inset-0 bg-dark/95 backdrop-blur-xl z-[100] hidden flex-col items-center justify-center">
-        <div class="glass rounded-3xl p-6 md:p-8 max-w-2xl w-full mx-6 relative border-white/10 mt-10 md:mt-0 max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <button type="button" class="absolute top-5 right-5 text-gray-400 hover:text-white text-xl transition-colors z-10" onclick="closeQuoteModal()"><i class="fas fa-times"></i></button>
+            <div id="quote-modal" class="fixed inset-0 bg-[#faf8f5]/60 backdrop-blur-2xl z-[100] hidden flex-col items-center justify-center">
+        <div class="bg-white shadow-2xl rounded-3xl border border-brand-500/10 p-6 md:p-8 max-w-2xl w-full mx-6 relative border-white/10 mt-10 md:mt-0 max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button type="button" class="absolute top-5 right-5 text-gray-400 hover:text-dark text-xl transition-colors z-10" onclick="closeQuoteModal()"><i class="fas fa-times"></i></button>
             
             <div class="text-center mb-6">
-                <h3 class="text-2xl font-serif text-white mb-2">Get your free estimate</h3>
+                <h3 class="text-2xl font-serif text-dark mb-2">Get your free estimate</h3>
                 
                 <!-- Progress Bar -->
                 <div class="flex justify-between items-center max-w-[200px] mx-auto mt-6 relative">
-                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-white/10 rounded-full z-0"></div>
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-brand-500/10 rounded-full z-0"></div>
                     <div id="quote-progress" class="absolute left-0 top-1/2 -translate-y-1/2 w-0 h-1 bg-brand-500 rounded-full z-0 transition-all duration-500"></div>
                     
-                    <div class="step-dot w-6 h-6 rounded-full bg-brand-500 border-4 border-dark relative z-10 flex items-center justify-center text-[10px] text-white font-bold" data-step="1">1</div>
-                    <div class="step-dot w-6 h-6 rounded-full bg-white/20 border-4 border-dark relative z-10 flex items-center justify-center text-[10px] text-gray-400 font-bold" data-step="2">2</div>
-                    <div class="step-dot w-6 h-6 rounded-full bg-white/20 border-4 border-dark relative z-10 flex items-center justify-center text-[10px] text-gray-400 font-bold" data-step="3">3</div>
+                    <div class="step-dot w-6 h-6 rounded-full bg-brand-500 border-4 border-dark relative z-10 flex items-center justify-center text-[10px] text-dark font-bold" data-step="1">1</div>
+                    <div class="step-dot w-6 h-6 rounded-full bg-brand-500 border-4 border-white relative z-10 flex items-center justify-center text-[10px] text-gray-400 font-bold" data-step="2">2</div>
+                    <div class="step-dot w-6 h-6 rounded-full bg-brand-500/20 border-4 border-dark relative z-10 flex items-center justify-center text-[10px] text-gray-400 font-bold" data-step="3">3</div>
                 </div>
-                <div class="flex justify-between max-w-[240px] mx-auto mt-2 text-[9px] uppercase tracking-widest text-gray-500">
+                <div class="flex justify-between max-w-[240px] mx-auto mt-2 text-[9px] uppercase tracking-widest text-gray-400">
                     <span class="w-1/3 text-center">Layout</span>
                     <span class="w-1/3 text-center">Calculator</span>
                     <span class="w-1/3 text-center">Review</span>
@@ -897,34 +897,34 @@
 
                 <!-- STEP 1: Layout -->
                 <div id="quote-step-1" class="step-content animate-fade-up">
-                    <h4 class="text-white text-lg font-medium mb-4 text-center">Select your floorplan</h4>
+                    <h4 class="text-dark text-lg font-medium mb-4 text-center">Select your floorplan</h4>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <label class="cursor-pointer group">
                             <input type="radio" name="Floorplan" value="1 BHK" class="peer sr-only" required>
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
+                            <div class="bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
                                 <i class="fas fa-home text-2xl text-gray-400 group-hover:text-brand-300 peer-checked:text-brand-400 mb-2 transition-colors"></i>
-                                <div class="text-sm text-gray-200 font-medium">1 BHK</div>
+                                <div class="text-sm text-gray-800 font-medium">1 BHK</div>
                             </div>
                         </label>
                         <label class="cursor-pointer group">
                             <input type="radio" name="Floorplan" value="2 BHK" class="peer sr-only">
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
+                            <div class="bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
                                 <i class="fas fa-building text-2xl text-gray-400 group-hover:text-brand-300 peer-checked:text-brand-400 mb-2 transition-colors"></i>
-                                <div class="text-sm text-gray-200 font-medium">2 BHK</div>
+                                <div class="text-sm text-gray-800 font-medium">2 BHK</div>
                             </div>
                         </label>
                         <label class="cursor-pointer group">
                             <input type="radio" name="Floorplan" value="3 BHK" class="peer sr-only">
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
+                            <div class="bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
                                 <i class="fas fa-city text-2xl text-gray-400 group-hover:text-brand-300 peer-checked:text-brand-400 mb-2 transition-colors"></i>
-                                <div class="text-sm text-gray-200 font-medium">3 BHK</div>
+                                <div class="text-sm text-gray-800 font-medium">3 BHK</div>
                             </div>
                         </label>
                         <label class="cursor-pointer group">
                             <input type="radio" name="Floorplan" value="4+ BHK" class="peer sr-only">
-                            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
+                            <div class="bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-4 text-center peer-checked:bg-brand-500/20 peer-checked:border-brand-500 transition-all hover:border-brand-400/50">
                                 <i class="fas fa-hotel text-2xl text-gray-400 group-hover:text-brand-300 peer-checked:text-brand-400 mb-2 transition-colors"></i>
-                                <div class="text-sm text-gray-200 font-medium">4+ BHK</div>
+                                <div class="text-sm text-gray-800 font-medium">4+ BHK</div>
                             </div>
                         </label>
                     </div>
@@ -938,15 +938,15 @@
                 <div id="quote-step-2" class="step-content hidden animate-fade-up">
                     <div class="flex justify-between items-end mb-4">
                         <div>
-                            <h4 class="text-white text-lg font-medium">Customize components</h4>
+                            <h4 class="text-dark text-lg font-medium">Customize components</h4>
                             <p class="text-xs text-gray-400">Mix & match packages per room.</p>
                         </div>
                         <div class="text-right">
-                            <p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Set All To</p>
-                            <div class="flex bg-white/5 rounded-lg border border-white/10 p-1">
-                                <button type="button" onclick="setGlobalPackage('essential')" class="px-2 py-1 text-[10px] text-gray-400 hover:text-white uppercase tracking-wider rounded">Ess.</button>
+                            <p class="text-[9px] text-gray-400 uppercase tracking-widest mb-1">Set All To</p>
+                            <div class="flex bg-slate-50 border border-slate-200 rounded-lg border border-white/10 p-1">
+                                <button type="button" onclick="setGlobalPackage('essential')" class="px-2 py-1 text-[10px] text-gray-400 hover:text-dark uppercase tracking-wider rounded">Ess.</button>
                                 <button type="button" onclick="setGlobalPackage('premium')" class="px-2 py-1 text-[10px] text-brand-300 bg-brand-500/20 uppercase tracking-wider rounded font-medium">Prem.</button>
-                                <button type="button" onclick="setGlobalPackage('luxury')" class="px-2 py-1 text-[10px] text-gray-400 hover:text-white uppercase tracking-wider rounded">Lux.</button>
+                                <button type="button" onclick="setGlobalPackage('luxury')" class="px-2 py-1 text-[10px] text-gray-400 hover:text-dark uppercase tracking-wider rounded">Lux.</button>
                             </div>
                         </div>
                     </div>
@@ -957,61 +957,61 @@
                     </div>
 
                     <div class="flex gap-3 pt-6 mt-4 border-t border-white/10">
-                        <button type="button" onclick="goToQuoteStep(1)" class="w-1/3 border border-white/20 text-gray-300 py-4 uppercase tracking-wider text-xs font-semibold hover:bg-white/5 transition-colors rounded-xl">Back</button>
-                        <button type="button" onclick="goToQuoteStep(3)" class="w-2/3 bg-brand-500 text-white py-4 flex items-center justify-between px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-brand-600 transition-colors rounded-xl shadow-lg">
+                        <button type="button" onclick="goToQuoteStep(1)" class="w-1/3 border border-white/20 text-gray-700 py-4 uppercase tracking-wider text-xs font-semibold hover:bg-slate-50 border border-slate-200 transition-colors rounded-xl">Back</button>
+                        <button type="button" onclick="goToQuoteStep(3)" class="w-2/3 bg-brand-500 text-dark py-4 flex items-center justify-between px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-brand-600 transition-colors rounded-xl shadow-lg">
                             <span>Review</span>
-                            <span id="step2-live-total" class="font-bold bg-white/20 px-2 py-1 rounded text-[10px]">₹0</span>
+                            <span id="step2-live-total" class="font-bold bg-brand-500/20 px-2 py-1 rounded text-[10px]">₹0</span>
                         </button>
                     </div>
                 </div>
 
                 <!-- STEP 3: Review -->
                 <div id="quote-step-3" class="step-content hidden animate-fade-up">
-                    <h4 class="text-white text-lg font-medium mb-4 text-center">Your Estimate is Ready!</h4>
+                    <h4 class="text-dark text-lg font-medium mb-4 text-center">Your Estimate is Ready!</h4>
                     
                     <div class="mb-6 bg-brand-500/10 border border-brand-500/20 rounded-xl p-5 relative overflow-hidden text-left">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/20 blur-[40px] rounded-full"></div>
                         
                         <div class="flex justify-between items-center mb-2">
                             <span class="text-xs text-gray-400 font-medium">Grand Total</span>
-                            <span id="quote-grand-total" class="text-sm text-white font-semibold">₹0</span>
+                            <span id="quote-grand-total" class="text-sm text-dark font-semibold">₹0</span>
                         </div>
                         <div class="flex justify-between items-center mb-3 pb-3 border-b border-brand-500/20">
                             <span class="text-xs text-gray-400 font-medium">+ GST (18%)</span>
-                            <span id="quote-gst" class="text-sm text-white font-semibold">₹0</span>
+                            <span id="quote-gst" class="text-sm text-dark font-semibold">₹0</span>
                         </div>
                         <div class="flex justify-between items-end">
                             <span class="text-[10px] text-brand-400 uppercase tracking-widest font-bold">Final Amount</span>
-                            <span id="quote-final-amount" class="text-3xl font-serif text-white">₹0</span>
+                            <span id="quote-final-amount" class="text-3xl font-serif text-dark">₹0</span>
                         </div>
                         <p class="text-[9px] text-gray-400 mt-4 leading-relaxed italic">*Note: This is an initial estimate and not final. The total amount might increase or decrease based on the final site assessment and specific material choices. (All totals include 18% GST).</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="block text-[10px] font-medium text-gray-500 uppercase tracking-widest mb-1">Your Name</label>
-                            <input type="text" name="Name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="John Doe">
+                            <label class="block text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-1">Your Name</label>
+                            <input type="text" name="Name" required class="w-full bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-3 text-sm text-dark focus:border-brand-400 focus:outline-none transition-colors" placeholder="John Doe">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-medium text-gray-500 uppercase tracking-widest mb-1">Phone Number</label>
-                            <input type="tel" name="Phone" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="+91 98865 58663">
+                            <label class="block text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-1">Phone Number</label>
+                            <input type="tel" name="Phone" required class="w-full bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-3 text-sm text-dark focus:border-brand-400 focus:outline-none transition-colors" placeholder="+91 98865 58663">
                         </div>
                         <div class="md:col-span-2">
-                            <label class="block text-[10px] font-medium text-gray-500 uppercase tracking-widest mb-1">Email Address</label>
-                            <input type="email" name="Email" required class="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none transition-colors" placeholder="john@example.com">
+                            <label class="block text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-1">Email Address</label>
+                            <input type="email" name="Email" required class="w-full bg-slate-50 border border-slate-200 border border-white/10 rounded-xl p-3 text-sm text-dark focus:border-brand-400 focus:outline-none transition-colors" placeholder="john@example.com">
                         </div>
                         <div class="md:col-span-2 flex gap-4">
                             <div class="w-1/2">
-                                <label class="block text-[10px] font-medium text-gray-500 uppercase tracking-widest mb-1">Purpose</label>
-                                <select name="Purpose" required class="w-full bg-dark border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none">
+                                <label class="block text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-1">Purpose</label>
+                                <select name="Purpose" required class="w-full bg-white shadow-sm border border-slate-200 border border-white/10 rounded-xl p-3 text-sm text-dark focus:border-brand-400 focus:outline-none">
                                     <option value="Move In">Move In</option>
                                     <option value="Rent Out">Rent Out</option>
                                     <option value="Renovate">Renovate</option>
                                 </select>
                             </div>
                             <div class="w-1/2">
-                                <label class="block text-[10px] font-medium text-gray-500 uppercase tracking-widest mb-1">Location</label>
-                                <select name="Location" required class="w-full bg-dark border border-white/10 rounded-xl p-3 text-sm text-white focus:border-brand-400 focus:outline-none">
+                                <label class="block text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-1">Location</label>
+                                <select name="Location" required class="w-full bg-white shadow-sm border border-slate-200 border border-white/10 rounded-xl p-3 text-sm text-dark focus:border-brand-400 focus:outline-none">
                                     <option value="Bangalore">Bangalore</option>
                                     <option value="Chennai">Chennai</option>
                                     <option value="Hyderabad">Hyderabad</option>
@@ -1022,8 +1022,8 @@
                     </div>
 
                     <div class="flex gap-3 pt-2">
-                        <button type="button" onclick="goToQuoteStep(2)" class="w-1/3 border border-white/20 text-gray-300 py-4 uppercase tracking-wider text-xs font-semibold hover:bg-white/5 transition-colors rounded-xl">Back</button>
-                        <button type="submit" id="quote-submit-btn" class="w-2/3 bg-brand-500 text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-brand-600 transition-colors rounded-xl relative overflow-hidden shadow-lg">
+                        <button type="button" onclick="goToQuoteStep(2)" class="w-1/3 border border-white/20 text-gray-700 py-4 uppercase tracking-wider text-xs font-semibold hover:bg-slate-50 border border-slate-200 transition-colors rounded-xl">Back</button>
+                        <button type="submit" id="quote-submit-btn" class="w-2/3 bg-brand-500 text-dark py-4 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-brand-600 transition-colors rounded-xl relative overflow-hidden shadow-lg">
                             <span class="relative z-10">Send me a copy</span>
                         </button>
                     </div>
@@ -1419,29 +1419,29 @@
 
         activeComponents.forEach(comp => {
             const rowHTML = `
-                <div class="bg-dark/50 border border-white/10 rounded-xl p-4 component-row" data-id="${comp.id}" data-type="${comp.type}">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 component-row" data-id="${comp.id}" data-type="${comp.type}">
                     <div class="flex justify-between items-center mb-3">
                         <div>
-                            <h5 class="text-white font-medium text-sm">${comp.name}</h5>
+                            <h5 class="text-dark font-medium text-sm">${comp.name}</h5>
                         </div>
-                        <div class="flex items-center bg-white/5 rounded-lg border border-white/10">
-                            <button type="button" class="px-3 py-1 text-gray-400 hover:text-white" onclick="updateCompSqft('${comp.id}', -1)">-</button>
-                            <input type="number" id="sqft-${comp.id}" class="w-12 text-center bg-transparent text-white text-sm font-semibold outline-none comp-sqft-input" value="${comp.defaultSqft}" step="0.5" onchange="calculateQuoteTotals()">
-                            <button type="button" class="px-3 py-1 text-gray-400 hover:text-white" onclick="updateCompSqft('${comp.id}', 1)">+</button>
+                        <div class="flex items-center bg-white shadow-sm border border-slate-200 rounded-lg border border-slate-200">
+                            <button type="button" class="px-3 py-1 text-gray-500 hover:text-dark" onclick="updateCompSqft('${comp.id}', -1)">-</button>
+                            <input type="number" id="sqft-${comp.id}" class="w-12 text-center bg-transparent text-dark text-sm font-semibold outline-none comp-sqft-input" value="${comp.defaultSqft}" step="0.5" onchange="calculateQuoteTotals()">
+                            <button type="button" class="px-3 py-1 text-gray-500 hover:text-dark" onclick="updateCompSqft('${comp.id}', 1)">+</button>
                         </div>
                     </div>
                     <div class="flex gap-2">
                         <label class="flex-1 cursor-pointer">
                             <input type="radio" name="pkg-${comp.id}" value="essential" class="peer sr-only pkg-radio" onchange="calculateQuoteTotals()">
-                            <div class="text-center py-2 border border-white/10 rounded-lg text-[10px] text-gray-400 peer-checked:bg-brand-500 peer-checked:text-white peer-checked:border-brand-500 transition-all uppercase tracking-widest">Ess.</div>
+                            <div class="text-center py-2 border border-slate-200 rounded-lg text-[10px] text-gray-500 peer-checked:bg-brand-500 peer-checked:text-dark peer-checked:border-brand-500 transition-all uppercase tracking-widest">Ess.</div>
                         </label>
                         <label class="flex-1 cursor-pointer">
                             <input type="radio" name="pkg-${comp.id}" value="premium" class="peer sr-only pkg-radio" checked onchange="calculateQuoteTotals()">
-                            <div class="text-center py-2 border border-white/10 rounded-lg text-[10px] text-gray-400 peer-checked:bg-brand-500 peer-checked:text-white peer-checked:border-brand-500 transition-all uppercase tracking-widest">Prem.</div>
+                            <div class="text-center py-2 border border-slate-200 rounded-lg text-[10px] text-gray-500 peer-checked:bg-brand-500 peer-checked:text-dark peer-checked:border-brand-500 transition-all uppercase tracking-widest">Prem.</div>
                         </label>
                         <label class="flex-1 cursor-pointer">
                             <input type="radio" name="pkg-${comp.id}" value="luxury" class="peer sr-only pkg-radio" onchange="calculateQuoteTotals()">
-                            <div class="text-center py-2 border border-white/10 rounded-lg text-[10px] text-gray-400 peer-checked:bg-brand-500 peer-checked:text-white peer-checked:border-brand-500 transition-all uppercase tracking-widest">Lux.</div>
+                            <div class="text-center py-2 border border-slate-200 rounded-lg text-[10px] text-gray-500 peer-checked:bg-brand-500 peer-checked:text-dark peer-checked:border-brand-500 transition-all uppercase tracking-widest">Lux.</div>
                         </label>
                     </div>
                 </div>
