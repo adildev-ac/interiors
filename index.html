@@ -1534,10 +1534,10 @@
         btn.querySelector('span').textContent = 'Opening WhatsApp...';
 
         try {
-            const name = form.querySelector('[name="name"]').value;
-            const phone = form.querySelector('[name="phone"]').value;
-            const location = form.querySelector('[name="location"]').value;
-            const layoutElement = form.querySelector('input[name="Floorplan"]:checked');
+            const name = form.querySelector('[name="name" i]').value;
+            const phone = form.querySelector('[name="phone" i]').value;
+            const location = form.querySelector('[name="location" i]').value;
+            const layoutElement = form.querySelector('input[name="Floorplan" i]:checked');
             const layout = layoutElement ? layoutElement.value : "Custom";
             const estimate = document.getElementById('hidden-estimate').value;
             const breakdown = document.getElementById('hidden-breakdown').value;
