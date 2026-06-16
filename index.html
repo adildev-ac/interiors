@@ -84,7 +84,20 @@
         #navbar { transition: background-color 0.4s, padding 0.4s, box-shadow 0.4s, backdrop-filter 0.4s; }
         .nav-scrolled { background-color: rgba(18,18,18,0.92) !important; backdrop-filter: blur(18px) !important; box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important; padding-top: 0.85rem !important; padding-bottom: 0.85rem !important; }
         .nav-scrolled .nav-link { color: #e6daca !important; }
+        .nav-scrolled .nav-link { color: #e6daca !important; }
         .nav-scrolled .logo-text { color: #fff !important; }
+        .nav-scrolled .logo-text .text-brand-700 { color: #D4AF37 !important; }
+        .nav-scrolled .get-quote-btn { border-color: #D4AF37 !important; color: #D4AF37 !important; }
+        .nav-scrolled .get-quote-btn:hover { color: #fff !important; }
+        .nav-scrolled .get-quote-btn span.absolute { background-color: #B8860B !important; }
+
+        /* ─── Dark Gradient Text ─── */
+        .gradient-text-dark {
+            background: linear-gradient(135deg, #96735a, #7d5e4b, #544136);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         /* ─── Image Hover ─── */
         .img-hover-zoom { overflow: hidden; }
@@ -167,20 +180,20 @@
     <!-- ═══════════════════════════════════════════
          NAVIGATION
     ═══════════════════════════════════════════ -->
-    <header id="navbar" class="fixed w-full z-50 py-5 text-white bg-transparent">
+    <header id="navbar" class="fixed w-full z-50 py-5 text-slate-900 bg-transparent">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3 transition-transform duration-300 hover:scale-105">
-                <span class="logo-text text-xl md:text-2xl font-serif font-bold tracking-wider">SHANTHA <span class="font-light text-brand-400">INTERIORS</span></span>
+                <span class="logo-text text-xl md:text-2xl font-serif font-bold tracking-wider">SHANTHA <span class="font-light text-brand-700">INTERIORS</span></span>
             </a>
 
             <nav class="hidden lg:flex space-x-8 items-center">
-                <a href="products.html" class="nav-link text-xs uppercase tracking-[0.2em] font-medium text-brand-400 hover:text-brand-300 transition-colors duration-300">Shop</a>
-                <a href="#about"    class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">About</a>
-                <a href="#services" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">Services</a>
-                <a href="#process"  class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">Process</a>
-                <a href="#portfolio" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">Portfolio</a>
-                <a href="#testimonials" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-400 transition-colors duration-300">Reviews</a>
-                <a href="#contact" class="group relative px-7 py-2.5 border border-brand-500 text-brand-400 rounded-full text-xs uppercase tracking-[0.2em] font-semibold overflow-hidden transition-all duration-500 hover:text-white">
+                <a href="products.html" class="nav-link text-xs uppercase tracking-[0.2em] font-medium text-brand-700 hover:text-brand-800 transition-colors duration-300">Shop</a>
+                <a href="#about"    class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-700 transition-colors duration-300">About</a>
+                <a href="#services" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-700 transition-colors duration-300">Services</a>
+                <a href="#process"  class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-700 transition-colors duration-300">Process</a>
+                <a href="#portfolio" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-700 transition-colors duration-300">Portfolio</a>
+                <a href="#testimonials" class="nav-link text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-700 transition-colors duration-300">Reviews</a>
+                <a href="#contact" class="group relative px-7 py-2.5 border border-brand-700 text-brand-700 get-quote-btn rounded-full text-xs uppercase tracking-[0.2em] font-semibold overflow-hidden transition-all duration-500 hover:text-white">
                     <span class="absolute inset-0 bg-brand-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
                     <span class="relative z-10">Get a Quote</span>
                 </a>
@@ -191,15 +204,15 @@
             </button>
         </div>
 
-        <div id="mobile-menu" class="lg:hidden bg-carbon/95 backdrop-blur-xl w-full absolute top-full left-0 border-t border-white/5">
+        <div id="mobile-menu" class="lg:hidden bg-white/95 backdrop-blur-xl w-full absolute top-full left-0 border-t border-white/5">
             <div class="flex flex-col px-6 py-6 space-y-5 text-center">
-                <a href="products.html" class="text-brand-400 font-medium hover:text-brand-300 mobile-link tracking-widest text-sm uppercase">Shop</a>
-                <a href="#about"    class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">About</a>
-                <a href="#services" class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">Services</a>
-                <a href="#process"  class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">Process</a>
-                <a href="#portfolio" class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">Portfolio</a>
-                <a href="#testimonials" class="text-white font-medium hover:text-brand-400 mobile-link tracking-widest text-sm uppercase">Reviews</a>
-                <a href="#contact" class="text-brand-400 font-semibold mobile-link tracking-widest text-sm uppercase border border-brand-500/30 py-3 rounded-full">Contact</a>
+                <a href="products.html" class="text-brand-700 font-medium hover:text-brand-800 mobile-link tracking-widest text-sm uppercase">Shop</a>
+                <a href="#about"    class="text-slate-900 font-medium hover:text-brand-700 mobile-link tracking-widest text-sm uppercase">About</a>
+                <a href="#services" class="text-slate-900 font-medium hover:text-brand-700 mobile-link tracking-widest text-sm uppercase">Services</a>
+                <a href="#process"  class="text-slate-900 font-medium hover:text-brand-700 mobile-link tracking-widest text-sm uppercase">Process</a>
+                <a href="#portfolio" class="text-slate-900 font-medium hover:text-brand-700 mobile-link tracking-widest text-sm uppercase">Portfolio</a>
+                <a href="#testimonials" class="text-slate-900 font-medium hover:text-brand-700 mobile-link tracking-widest text-sm uppercase">Reviews</a>
+                <a href="#contact" class="text-brand-700 font-semibold mobile-link tracking-widest text-sm uppercase border border-brand-500/30 py-3 rounded-full">Contact</a>
             </div>
         </div>
     </header>
@@ -225,24 +238,24 @@
             <!-- Badges -->
             <div class="flex flex-wrap justify-center gap-3 mb-8 reveal">
                 <span class="bg-white/60 backdrop-blur-md text-dark px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20">
-                    <i class="fas fa-gem mr-1.5 text-brand-400"></i> <span id="hero-price-display">Starts at ₹700/sqft</span>
+                    <i class="fas fa-gem mr-1.5 text-brand-700"></i> <span id="hero-price-display">Starts at ₹700/sqft</span>
                 </span>
                 <span class="bg-white/60 backdrop-blur-md text-dark px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20">
-                    <i class="fas fa-bolt mr-1.5 text-brand-400"></i> <span id="hero-guarantee-display">30-Day Delivery Guarantee*</span>
+                    <i class="fas fa-bolt mr-1.5 text-brand-700"></i> <span id="hero-guarantee-display">30-Day Delivery Guarantee*</span>
                 </span>
                 <button onclick="openReferralModal()" class="bg-white/60 backdrop-blur-md text-brand-700 hover:text-brand-900 px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg border-brand-500/20 hover:bg-brand-500/20 transition-colors cursor-pointer relative group overflow-hidden">
                     <span class="absolute inset-0 bg-brand-500/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
-                    <i class="fas fa-handshake mr-1.5 text-brand-400 relative z-10 group-hover:text-white transition-colors"></i> <span class="relative z-10">Refer & Earn 1%</span>
+                    <i class="fas fa-handshake mr-1.5 text-brand-700 relative z-10 group-hover:text-white transition-colors"></i> <span class="relative z-10">Refer & Earn 1%</span>
                 </button>
             </div>
 
-            <p class="text-brand-400 font-sans tracking-[0.35em] uppercase text-xs md:text-sm mb-5 reveal reveal-delay-1">Rooted in Bengaluru · Designing for South India</p>
+            <p class="text-brand-700 font-sans tracking-[0.35em] uppercase text-xs md:text-sm mb-5 reveal reveal-delay-1">Rooted in Bengaluru · Designing for South India</p>
 
             <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-dark leading-[1.1] mb-7 reveal reveal-delay-2">
-                Crafting Timeless<br><span class="italic font-light gradient-text">Spaces That Inspire</span>
+                Crafting Timeless<br><span class="italic font-light gradient-text-dark">Spaces That Inspire</span>
             </h1>
 
-            <p class="text-gray-800 text-base md:text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-3">
+            <p class="text-slate-900 font-medium text-base md:text-lg font-light mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-3">
                 Bespoke interior design solutions blending modern aesthetics with the rich architectural heritage of South India.
             </p>
 
@@ -258,10 +271,10 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-            <a href="#offer-banner" class="flex flex-col items-center text-dark/40 hover:text-brand-400 transition-colors">
+            <a href="#offer-banner" class="flex flex-col items-center text-slate-900/60 hover:text-brand-700 transition-colors">
                 <span class="text-[10px] uppercase tracking-[0.3em] mb-2">Scroll</span>
                 <div class="w-5 h-8 border border-dark/20 rounded-full flex justify-center pt-1.5">
-                    <div class="w-1 h-2 bg-brand-400 rounded-full animate-bounce"></div>
+                    <div class="w-1 h-2 bg-brand-600 rounded-full animate-bounce"></div>
                 </div>
             </a>
         </div>
