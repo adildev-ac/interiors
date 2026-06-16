@@ -1526,21 +1526,35 @@
         document.getElementById('hidden-breakdown').value = breakdownTxt;
     }
 
-    document.getElementById('quote-form').addEventListener('submit', async function(e) {
+    document.getElementById('quote-form').addEventListener('submit', function(e) {
         e.preventDefault();
         const form = e.target;
         const btn = document.getElementById('quote-submit-btn');
         btn.disabled = true;
-        btn.querySelector('span').textContent = 'Submitting...';
+        btn.querySelector('span').textContent = 'Opening WhatsApp...';
 
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: new FormData(form)
-            });
-            const result = await response.json();
+            const name = form.querySelector('[name="name"]').value;
+            const phone = form.querySelector('[name="phone"]').value;
+            const location = form.querySelector('[name="location"]').value;
+            const layoutElement = form.querySelector('input[name="Floorplan"]:checked');
+            const layout = layoutElement ? layoutElement.value : "Custom";
+            const estimate = document.getElementById('hidden-estimate').value;
+            const breakdown = document.getElementById('hidden-breakdown').value;
+
+            let waText = `*New Interior Quote Enquiry* 🏠\n\n`;
+            waText += `*Name:* ${name}\n`;
+            waText += `*Phone:* ${phone}\n`;
+            waText += `*Location:* ${location}\n`;
+            waText += `*Layout Selected:* ${layout}\n\n`;
+            waText += `*Requirement Breakdown:*\n${breakdown}\n`;
+            waText += `*Estimated Total:* ${estimate}\n\n`;
+            waText += `Please get in touch with me regarding this quote!`;
+
+            const WHATSAPP_NUMBER = "919000000000"; // REPLACE WITH ACTUAL NUMBER
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
             
-            if (!response.ok || !result.success) throw new Error();
+            window.open(waUrl, '_blank');
 
             document.getElementById('quote-success').classList.remove('hidden');
             form.reset();
