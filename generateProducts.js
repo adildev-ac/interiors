@@ -92,7 +92,7 @@ const htmlContent = `<!DOCTYPE html>
     <header class="w-full z-50 py-5 text-white bg-dark border-b border-white/5">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="index.html" class="logo-text text-2xl font-serif font-bold tracking-wider transition-colors duration-300 flex items-center gap-3">
-                <img src="INTERIORS.png" alt="Shantha Interiors Logo" class="h-10 w-auto">
+                <img src="logo.png" alt="Shantha Interiors Logo" class="h-10 w-auto">
                 <div>
                     SHANTA <span class="font-light text-brand-400">INTERIORS</span>
                 </div>
